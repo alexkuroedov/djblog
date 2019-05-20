@@ -25,5 +25,5 @@ def home(request):
 
 
 def contacts(request):
-    return render(request, 'blog/contacts.html')
+    return render(request, 'blog/contacts.html', {'title':'About us page'})
     # return HttpResponse('Contacts Page')
