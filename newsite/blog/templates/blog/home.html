@@ -11,7 +11,7 @@
 
     {% if post.author %}
 
-        <p>Автор: {{post.author}}, Дата: {{post.date}}</p>
+        <p>Автор: {{post.author}}, Дата: {{post.date | date:"j F Y, время: H:i:s"}}</p>
 
     {% else %}
 

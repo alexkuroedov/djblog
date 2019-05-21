@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import News
 
 news = [
     {'title': 'Our First News',
@@ -18,7 +18,7 @@ news = [
 # Create your views here.
 def home(request):
     data = {
-        'news': news,
+        'news': News.objects.all(),
         'title': 'Main Blog Page'
     }
     return render(request, 'blog/home.html', data)
@@ -26,4 +26,4 @@ def home(request):
 
 def contacts(request):
     return render(request, 'blog/contacts.html', {'title':'About us page'})
-    # return HttpResponse('Contacts Page')
+
